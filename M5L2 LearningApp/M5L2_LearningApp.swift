@@ -1,5 +1,5 @@
 //
-//  M5L2_LearningAppApp.swift
+//  M5L2_LearningApp.swift
 //  M5L2 LearningApp
 //
 //  Created by Alan Dinon on 26/4/2022.
@@ -8,10 +8,11 @@
 import SwiftUI
 
 @main
-struct M5L2_LearningAppApp: App {
+struct M5L2_LearningApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            HomeView()
+                .environmentObject(ContentModel())
         }
     }
 }
