@@ -12,6 +12,9 @@
 		F989ACA528177CC7002F6782 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F989ACA428177CC7002F6782 /* Assets.xcassets */; };
 		F989ACA828177CC7002F6782 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F989ACA728177CC7002F6782 /* Preview Assets.xcassets */; };
 		F989ACB428178170002F6782 /* ContentModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F989ACB328178170002F6782 /* ContentModel.swift */; };
+		F989ACB82817DD8B002F6782 /* style.html in Resources */ = {isa = PBXBuildFile; fileRef = F989ACB62817DD8B002F6782 /* style.html */; };
+		F989ACBA281933CD002F6782 /* Models.swift in Sources */ = {isa = PBXBuildFile; fileRef = F989ACB9281933CC002F6782 /* Models.swift */; };
+		F989ACBC281B9E38002F6782 /* data.json in Resources */ = {isa = PBXBuildFile; fileRef = F989ACBB281B9E38002F6782 /* data.json */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -21,6 +24,9 @@
 		F989ACA428177CC7002F6782 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F989ACA728177CC7002F6782 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		F989ACB328178170002F6782 /* ContentModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentModel.swift; sourceTree = "<group>"; };
+		F989ACB62817DD8B002F6782 /* style.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = style.html; sourceTree = "<group>"; };
+		F989ACB9281933CC002F6782 /* Models.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Models.swift; sourceTree = "<group>"; };
+		F989ACBB281B9E38002F6782 /* data.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = data.json; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -92,6 +98,7 @@
 		F989ACB028178072002F6782 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				F989ACB9281933CC002F6782 /* Models.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -99,6 +106,8 @@
 		F989ACB128178081002F6782 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				F989ACBB281B9E38002F6782 /* data.json */,
+				F989ACB62817DD8B002F6782 /* style.html */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -169,7 +178,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				F989ACA828177CC7002F6782 /* Preview Assets.xcassets in Resources */,
+				F989ACB82817DD8B002F6782 /* style.html in Resources */,
 				F989ACA528177CC7002F6782 /* Assets.xcassets in Resources */,
+				F989ACBC281B9E38002F6782 /* data.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -183,6 +194,7 @@
 				F989ACA328177CBD002F6782 /* HomeView.swift in Sources */,
 				F989ACA128177CBD002F6782 /* M5L2_LearningApp.swift in Sources */,
 				F989ACB428178170002F6782 /* ContentModel.swift in Sources */,
+				F989ACBA281933CD002F6782 /* Models.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
