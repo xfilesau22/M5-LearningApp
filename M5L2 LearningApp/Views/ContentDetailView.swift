@@ -6,10 +6,19 @@
 //
 
 import SwiftUI
+import AVKit
 
 struct ContentDetailView: View {
+    @EnvironmentObject var model: ContentModel
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        let lesson = model.currentLesson
+        
+        
+        VStack{
+            VideoPlayer(player: AVPlayer(url: URL))
+            Text("Next Lesson:")
+        }
     }
 }
 
