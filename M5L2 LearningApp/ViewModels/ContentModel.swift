@@ -96,4 +96,25 @@ class ContentModel: ObservableObject {
         // Set the current lesson
         currentLesson = currentModule!.content.lessons[currentLessonIndex]
     }
+    
+    func nextLesson(){
+        // Advance the lesson index
+        currentLessonIndex += 1
+        
+        // Check that it is within range
+        if currentLessonIndex < currentModule!.content.lessons.count {
+            
+            // Set the currentLesson property
+            currentLesson = currentModule!.content.lessons[currentLessonIndex]
+            
+        } else {
+            currentLessonIndex = 0
+            currentLesson = nil
+        }
+    }
+    
+    func hasNextLesson() -> Bool {
+        
+            return (currentLessonIndex + 1 < currentModule!.content.lessons.count)
+        }
 }

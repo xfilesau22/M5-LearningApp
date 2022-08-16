@@ -34,9 +34,7 @@ struct HomeView: View {
                                     // Test Card
                                     HomeViewRow(image: module.test.image, tile: module.category, description: module.test.description, count: "\(module.test.questions.count) Questions", time: "\(module.test.time)")
                                 }
-                                               
                         }
-                                               
                     }
                     .accentColor(.black)
                     .padding()
@@ -44,6 +42,7 @@ struct HomeView: View {
             }
             .navigationTitle("Get Started")
         }
+        .navigationViewStyle(.stack)
     }
 }
 

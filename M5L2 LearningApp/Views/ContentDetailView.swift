@@ -13,12 +13,36 @@ struct ContentDetailView: View {
     
     var body: some View {
         let lesson = model.currentLesson
-        
+        let url = URL(string: Constants.videoHostUrl + (lesson?.video ?? ""))
         
         VStack{
-            VideoPlayer(player: AVPlayer(url: URL))
-            Text("Next Lesson:")
+            // Only show a video if we get a valid url.
+            if url != nil {
+                VideoPlayer(player: AVPlayer(url: url!))
+                    .cornerRadius(10)
+            }
+            // Description
+            
+            // Next Lesson Button button only if there is a next lesson
+            if model.hasNextLesson(){
+                Button {
+                    // Advance the lesson
+                    model.nextLesson()
+                } label: {
+                    ZStack{
+                        Rectangle()
+                            .frame(height: 48)
+                            .foregroundColor(.green)
+                            .cornerRadius(10)
+                            .shadow(radius: 5)
+                    Text("Next Lesson: \(model.currentModule!.content.lessons[model.currentLessonIndex + 1].title)")
+                            .foregroundColor(.white)
+                            .bold()
+                    }
+                }
+            }
         }
+        .padding()
     }
 }
 
