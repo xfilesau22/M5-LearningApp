@@ -1,7 +1,7 @@
 //
 //  HomeView.swift
 //  M5L2 LearningApp
-//  M5L6....coding
+//  M5L8....coding
 //  Created by Alan Dinon on 26/4/2022.
 //
 
@@ -22,18 +22,17 @@ struct HomeView: View {
                                 NavigationLink(destination:
                                                 ContentView()
                                     .onAppear(perform: {
-                                        model.beginModule(module.id)
-                                        
-                                    }),
-                                    label: {
+                                        model.beginModule(module.id)}),
+                                               tag: module.id,
+                                               selection: $model.currentContentSelected,
+                                               label: {
                                     
                                     // Learning Card
-                                    HomeViewRow(image: module.content.image, tile: module.category, description: module.content.description, count: "\(module.content.lessons.count) Lessons", time: "\(module.content.time)")
-                                })
-                                    
-                                    // Test Card
-                                    HomeViewRow(image: module.test.image, tile: module.category, description: module.test.description, count: "\(module.test.questions.count) Questions", time: "\(module.test.time)")
-                                }
+                                    HomeViewRow(image: module.content.image, tile: module.category, description: module.content.description, count: "\(module.content.lessons.count) Lessons", time: "\(module.content.time)")})
+                                
+                                // Test Card
+                                HomeViewRow(image: module.test.image, tile: module.category, description: module.test.description, count: "\(module.test.questions.count) Questions", time: "\(module.test.time)")
+                            }
                         }
                     }
                     .accentColor(.black)

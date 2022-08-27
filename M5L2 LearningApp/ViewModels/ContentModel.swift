@@ -1,7 +1,7 @@
 //
 //  ContentModel.swift
 //  M5L2 LearningApp
-//  M5L6....
+//  M5L8....
 //
 //  Created by Alan Dinon on 26/4/2022.
 //
@@ -21,9 +21,16 @@ class ContentModel: ObservableObject {
     @Published var currentLesson: Lesson?
     var currentLessonIndex = 0
     
+    // Current lesson explanation (initialize as an empty string)
+    @Published var lessonDescription = NSAttributedString()
     
+    // HTML Styling Data Property
     var styleData: Data?
     
+    // Current selected content and test
+    @Published var currentContentSelected: Int?
+    
+    // Initilizer for getLocalData
     init(){
         
         getLocalData()
@@ -93,8 +100,9 @@ class ContentModel: ObservableObject {
             currentLessonIndex = 0
         }
         
-        // Set the current lesson
+        // Set the current lesson and description
         currentLesson = currentModule!.content.lessons[currentLessonIndex]
+        lessonDescription = addStyling(currentLesson!.explanation)
     }
     
     func nextLesson(){
@@ -104,8 +112,9 @@ class ContentModel: ObservableObject {
         // Check that it is within range
         if currentLessonIndex < currentModule!.content.lessons.count {
             
-            // Set the currentLesson property
+            // Set the currentLesson property and the lessonDescription property
             currentLesson = currentModule!.content.lessons[currentLessonIndex]
+            lessonDescription = addStyling(currentLesson!.explanation)
             
         } else {
             currentLessonIndex = 0
@@ -115,6 +124,26 @@ class ContentModel: ObservableObject {
     
     func hasNextLesson() -> Bool {
         
-            return (currentLessonIndex + 1 < currentModule!.content.lessons.count)
+        return (currentLessonIndex + 1 < currentModule!.content.lessons.count)
+    }
+    
+    // MARK: Code Styling
+    private func addStyling(_ htmlString: String) -> NSAttributedString {
+        var resultString = NSAttributedString()
+        var data = Data()
+        
+        // Add the styling data
+        if styleData != nil {
+            data.append(styleData!)
         }
+        // Add the html data
+        data.append(Data(htmlString.utf8))
+        
+        // Convert to attributed string
+        if let attributedString = try? NSAttributedString(data: data, options: [.documentType: NSAttributedString.DocumentType.html], documentAttributes: nil){
+            
+            resultString = attributedString
+        }
+        return resultString
+    }
 }

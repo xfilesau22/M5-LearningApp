@@ -1,6 +1,7 @@
 //
 //  ContentDetailView.swift
 //  M5L2 LearningApp
+//  M5L8....
 //
 //  Created by Alan Dinon on 15/8/2022.
 //
@@ -22,6 +23,7 @@ struct ContentDetailView: View {
                     .cornerRadius(10)
             }
             // Description
+            CodeTextView()
             
             // Next Lesson Button button only if there is a next lesson
             if model.hasNextLesson(){
@@ -30,12 +32,25 @@ struct ContentDetailView: View {
                     model.nextLesson()
                 } label: {
                     ZStack{
-                        Rectangle()
+                        RectangleCard(color: Color.green)
                             .frame(height: 48)
-                            .foregroundColor(.green)
-                            .cornerRadius(10)
-                            .shadow(radius: 5)
-                    Text("Next Lesson: \(model.currentModule!.content.lessons[model.currentLessonIndex + 1].title)")
+                        
+                        Text("Next Lesson: \(model.currentModule!.content.lessons[model.currentLessonIndex + 1].title)")
+                            .foregroundColor(.white)
+                            .bold()
+                    }
+                }
+            } else {  // no next button, add complete button to return navigation to home view
+                
+                Button {
+                    // Return link to HomeView
+                    model.currentContentSelected = nil
+                } label: {
+                    ZStack{
+                        RectangleCard(color: Color.red)
+                            .frame(height: 48)
+                        
+                        Text("Complete")
                             .foregroundColor(.white)
                             .bold()
                     }
@@ -43,6 +58,7 @@ struct ContentDetailView: View {
             }
         }
         .padding()
+        .navigationBarTitle(lesson?.title ?? "")
     }
 }
 
