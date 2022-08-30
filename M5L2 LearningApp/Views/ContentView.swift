@@ -1,7 +1,7 @@
 //
 //  ContentView.swift
 //  M5L2 LearningApp
-//  M5L8....
+//  M5L9....
 //
 //  Created by Alan Dinon on 23/7/2022.
 //
@@ -29,7 +29,7 @@ struct ContentView: View {
             }
             .accentColor(Color.black)
             .padding()
-            .navigationTitle("Learn \(model.currentModule?.category ?? "")")
+            .navigationBarTitle("Learn \(model.currentModule?.category ?? "")")
         }
     }
 }

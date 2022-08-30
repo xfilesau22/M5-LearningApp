@@ -22,6 +22,7 @@
 		F989ACB82817DD8B002F6782 /* style.html in Resources */ = {isa = PBXBuildFile; fileRef = F989ACB62817DD8B002F6782 /* style.html */; };
 		F989ACBA281933CD002F6782 /* Models.swift in Sources */ = {isa = PBXBuildFile; fileRef = F989ACB9281933CC002F6782 /* Models.swift */; };
 		F989ACBC281B9E38002F6782 /* data.json in Resources */ = {isa = PBXBuildFile; fileRef = F989ACBB281B9E38002F6782 /* data.json */; };
+		F9951FA728BD98B700E46CA6 /* TestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9951FA628BD98B700E46CA6 /* TestView.swift */; };
 		F9D097F5283B56C70090CEC0 /* HomeViewRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9D097F4283B56C70090CEC0 /* HomeViewRow.swift */; };
 /* End PBXBuildFile section */
 
@@ -42,6 +43,7 @@
 		F989ACB62817DD8B002F6782 /* style.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = style.html; sourceTree = "<group>"; };
 		F989ACB9281933CC002F6782 /* Models.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Models.swift; sourceTree = "<group>"; };
 		F989ACBB281B9E38002F6782 /* data.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = data.json; sourceTree = "<group>"; };
+		F9951FA628BD98B700E46CA6 /* TestView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestView.swift; sourceTree = "<group>"; };
 		F9D097F4283B56C70090CEC0 /* HomeViewRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewRow.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -113,6 +115,7 @@
 				F980D07A288B6E2600B9970E /* ContentView.swift */,
 				F980D07C288BE34C00B9970E /* ContentViewRow.swift */,
 				F9464FCD28A9FFCE007CFD0E /* ContentDetailView.swift */,
+				F9951FA628BD98B700E46CA6 /* TestView.swift */,
 				F978691A28B4A366007C48E8 /* CodeTextView.swift */,
 				F978693A28B99FF7007C48E8 /* RectangleCard.swift */,
 			);
@@ -224,6 +227,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F9951FA728BD98B700E46CA6 /* TestView.swift in Sources */,
 				F989ACA328177CBD002F6782 /* HomeView.swift in Sources */,
 				F9D097F5283B56C70090CEC0 /* HomeViewRow.swift in Sources */,
 				F980D07B288B6E2600B9970E /* ContentView.swift in Sources */,

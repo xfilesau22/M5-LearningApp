@@ -1,7 +1,7 @@
 //
 //  ContentModel.swift
 //  M5L2 LearningApp
-//  M5L8....
+//  M5L9....
 //
 //  Created by Alan Dinon on 26/4/2022.
 //
@@ -21,6 +21,10 @@ class ContentModel: ObservableObject {
     @Published var currentLesson: Lesson?
     var currentLessonIndex = 0
     
+    // Current Test
+    @Published var currentQuestion: Question?
+    var currentQuestionIndex = 0
+    
     // Current lesson explanation (initialize as an empty string)
     @Published var lessonDescription = NSAttributedString()
     
@@ -29,6 +33,7 @@ class ContentModel: ObservableObject {
     
     // Current selected content and test
     @Published var currentContentSelected: Int?
+    @Published var currentTestSelected: Int?
     
     // Initilizer for getLocalData
     init(){
@@ -125,6 +130,21 @@ class ContentModel: ObservableObject {
     func hasNextLesson() -> Bool {
         
         return (currentLessonIndex + 1 < currentModule!.content.lessons.count)
+    }
+    
+    func beginTest(moduleId:Int){
+        // Set the current module
+        beginModule(moduleId)
+        
+        // Set the current test
+        currentQuestionIndex = 0
+        
+        // If there are questions, set the current question to the first one.
+        if currentModule?.test.questions.count ?? 0 < 0 {
+            
+            currentQuestion = currentModule?.test.questions[currentQuestionIndex]
+        }
+        
     }
     
     // MARK: Code Styling
