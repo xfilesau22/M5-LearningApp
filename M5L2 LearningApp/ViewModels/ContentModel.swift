@@ -11,7 +11,7 @@ import Foundation
 class ContentModel: ObservableObject {
     
     // List of Modules
-    @Published var modules = [Module]()
+    @Published var modules = [Module]() // properties: id/category/content/test
     
     // Current Module
     @Published var currentModule: Module?
@@ -26,7 +26,7 @@ class ContentModel: ObservableObject {
     var currentQuestionIndex = 0
     
     // Current lesson explanation (initialize as an empty string)
-    @Published var lessonDescription = NSAttributedString()
+    @Published var codeText = NSAttributedString()
     
     // HTML Styling Data Property
     var styleData: Data?
@@ -90,7 +90,6 @@ class ContentModel: ObservableObject {
                 break
             }
         }
-        
         // Set the current module.
         currentModule = modules[currentModuleIndex]
     }
@@ -107,7 +106,7 @@ class ContentModel: ObservableObject {
         
         // Set the current lesson and description
         currentLesson = currentModule!.content.lessons[currentLessonIndex]
-        lessonDescription = addStyling(currentLesson!.explanation)
+        codeText = addStyling(currentLesson!.explanation)
     }
     
     func nextLesson(){
@@ -119,7 +118,7 @@ class ContentModel: ObservableObject {
             
             // Set the currentLesson property and the lessonDescription property
             currentLesson = currentModule!.content.lessons[currentLessonIndex]
-            lessonDescription = addStyling(currentLesson!.explanation)
+            codeText = addStyling(currentLesson!.explanation)
             
         } else {
             currentLessonIndex = 0
@@ -132,19 +131,21 @@ class ContentModel: ObservableObject {
         return (currentLessonIndex + 1 < currentModule!.content.lessons.count)
     }
     
-    func beginTest(moduleId:Int){
-        // Set the current module
+    func beginTest(_ moduleId:Int){
+        // Set the current module, determines index, and uses index to assign the current module
         beginModule(moduleId)
         
-        // Set the current test
+        // Set the current question index
         currentQuestionIndex = 0
         
-        // If there are questions, set the current question to the first one.
-        if currentModule?.test.questions.count ?? 0 < 0 {
+        // If there are questions, if nil set 0, if >0 set the current question to the first one 0.
+        if currentModule?.test.questions.count ?? 0 > 0 {
+            // Set the current question
+            currentQuestion = currentModule!.test.questions[currentQuestionIndex]
             
-            currentQuestion = currentModule?.test.questions[currentQuestionIndex]
+            // Set the Question content
+            codeText = addStyling(currentQuestion!.content)
         }
-        
     }
     
     // MARK: Code Styling

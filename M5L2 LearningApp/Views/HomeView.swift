@@ -29,14 +29,14 @@ struct HomeView: View {
                                     // Learning Card
                                     HomeViewRow(image: module.content.image, tile: module.category, description: module.content.description, count: "\(module.content.lessons.count) Lessons", time: "\(module.content.time)")})
                                 
-                                NavigationLink(destination: TestView()
-                                    .onAppear(perform:{ model.beginTest(moduleId: module.id)    
-                                    }),
-                                         tag: module.id,
-                                         selection: $model.currentTestSelected,
-                                         label: {
+                                NavigationLink(destination:
+                                                TestView()
+                                    .onAppear(perform: {model.beginTest(module.id)}),
+                                               tag: module.id,
+                                               selection: $model.currentTestSelected,
+                                               label: {
                                     // Test Card
-                                    HomeViewRow(image: module.test.image, tile: module.category, description: module.test.description, count: "\(module.test.questions.count) Questions", time: "\(module.test.time)")})   
+                                    HomeViewRow(image: module.test.image, tile: module.category, description: module.test.description, count: "\(module.test.questions.count) Questions", time: "\(module.test.time)")})
                             }
                         }
                     }

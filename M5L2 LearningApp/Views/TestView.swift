@@ -1,6 +1,7 @@
 //
 //  TestView.swift
 //  M5L2 LearningApp
+//  M5L9....
 //
 //  Created by Alan Dinon on 30/8/2022.
 //
@@ -11,22 +12,32 @@ struct TestView: View {
     @EnvironmentObject var model: ContentModel
     
     var body: some View {
+        // Add this view to allow for currentQuestion to be published, ProgressView() also fixes.
+        //Text("Question ID: \(model.currentQuestion?.id ?? 00)")
         
         if model.currentQuestion != nil {
             
             VStack{
                 
                 // Question Number
+                Text("Question \(model.currentQuestionIndex + 1) of \(model.currentModule?.test.questions.count ?? 0)")
                 
                 // Question
+                CodeTextView()
+                    .padding()
                 
                 // Answers:
                 
-                // Button to submit answer, advance to next question
+                
+                // Button to submit answer, complete the quiz
                 
             }
             .navigationBarTitle("\(model.currentModule?.category ?? "") Test")
+       }
+        else {
+            ProgressView()
         }
+            
     }
 }
 
