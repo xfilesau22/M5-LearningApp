@@ -1,7 +1,7 @@
 //
 //  TestView.swift
 //  M5L2 LearningApp
-//  M5L9....
+//  M5L10 Coding....
 //
 //  Created by Alan Dinon on 30/8/2022.
 //
@@ -33,11 +33,11 @@ struct TestView: View {
                 
             }
             .navigationBarTitle("\(model.currentModule?.category ?? "") Test")
-       }
+        }
         else {
             ProgressView()
         }
-            
+        
     }
 }
 
