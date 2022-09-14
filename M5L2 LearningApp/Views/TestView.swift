@@ -1,7 +1,7 @@
 //
 //  TestView.swift
 //  M5L2 LearningApp
-//  M5L10 Coding....
+//  M5L12 Coding....
 //
 //  Created by Alan Dinon on 30/8/2022.
 //
@@ -82,21 +82,32 @@ struct TestView: View {
                     .accentColor(Color.black)
                     .padding()
                 }
-                // Button to submit answer, complete the quiz
+                // Submit Button: to submit answer, complete the quiz
                 Button {
-                    // Change the submitted state to true
-                    submitted = true
                     
-                    // Check The answer and increment the counter if the answer is correct.
-                    if selectedAnswerIndex == model.currentQuestion!.correctIndex {
-                        numberCorrect += 1
+                    // Check if the answer has been submitted
+                    if submitted == true {
+                        // Answer has already been submitted, move to the next question
+                        model.nextQuestion()
+                        submitted = false
+                        selectedAnswerIndex = nil
                     }
+                    else {
+                        // Submit the answer, change the submitted state to true
+                        submitted = true
+                        
+                        // Check The answer and increment the counter if the answer is correct.
+                        if selectedAnswerIndex == model.currentQuestion!.correctIndex {
+                            numberCorrect += 1
+                        }
+                    }
+                    
                 } label: {
                     // Button Rectangle
                     ZStack {
                         RectangleCard(color: .green)
                             .frame(height: 48)
-                        Text("Submit")
+                        Text(buttonText)
                             .foregroundColor(Color.white)
                             .bold()
                     }
@@ -108,6 +119,28 @@ struct TestView: View {
         }
         else {
             ProgressView()
+        }
+    }
+    
+    var buttonText: String {
+        
+        // Check if answer has been submitted
+        if submitted == true {
+            
+            // Check if last question
+            if model.currentQuestionIndex + 1 == model.currentModule!.test.questions.count {
+                
+                // This is the last question
+                return "Finish"
+            }
+            else {
+                // There is a next question
+                return "Next"
+            }
+        }
+        else {
+            // Answer not submitted
+            return "Submit"
         }
     }
 }

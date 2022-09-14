@@ -1,7 +1,7 @@
 //
 //  ContentModel.swift
 //  M5L2 LearningApp
-//  M5L10 Coding....
+//  M5L12 Coding....
 //
 //  Created by Alan Dinon on 26/4/2022.
 //
@@ -145,6 +145,26 @@ class ContentModel: ObservableObject {
             
             // Set the Question content
             codeText = addStyling(currentQuestion!.content)
+        }
+    }
+    
+    func nextQuestion() {
+        
+        // Advance the question index
+        currentQuestionIndex += 1
+        
+        // Check that it is within the range of questions
+        if  currentQuestionIndex < currentModule!.test.questions.count {
+            
+            // Set the current question
+            currentQuestion = currentModule!.test.questions[currentQuestionIndex]
+            codeText = addStyling(currentQuestion!.content)
+        }
+        else {
+            
+            // If not, then reset the properties
+            currentQuestionIndex = 0
+            currentQuestion = nil
         }
     }
     
