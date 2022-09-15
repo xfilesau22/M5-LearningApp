@@ -12,7 +12,7 @@ struct TestView: View {
     @EnvironmentObject var model: ContentModel
     @State var selectedAnswerIndex:Int?
     @State var submitted = false
-    @State var numberCorrect = 0
+    @State var numCorrect = 0
     
     var body: some View {
         
@@ -98,7 +98,7 @@ struct TestView: View {
                         
                         // Check The answer and increment the counter if the answer is correct.
                         if selectedAnswerIndex == model.currentQuestion!.correctIndex {
-                            numberCorrect += 1
+                            numCorrect += 1
                         }
                     }
                     
@@ -117,8 +117,10 @@ struct TestView: View {
             }
             .navigationBarTitle("\(model.currentModule?.category ?? "") Test")
         }
+        
         else {
-            ProgressView()
+            // If the currentQuestion is nil, show the results view
+            TestResultView(numCorrect: numCorrect)
         }
     }
     

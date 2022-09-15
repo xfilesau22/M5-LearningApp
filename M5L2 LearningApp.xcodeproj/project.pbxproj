@@ -10,6 +10,7 @@
 		F9464FCE28A9FFCE007CFD0E /* ContentDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9464FCD28A9FFCE007CFD0E /* ContentDetailView.swift */; };
 		F9464FD128AA1322007CFD0E /* AVKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F9464FD028AA1322007CFD0E /* AVKit.framework */; };
 		F9464FD328AA3BF1007CFD0E /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9464FD228AA3BF1007CFD0E /* Constants.swift */; };
+		F95B47EC28D2D56B00290B27 /* TestResultView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F95B47EB28D2D56B00290B27 /* TestResultView.swift */; };
 		F978691B28B4A366007C48E8 /* CodeTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F978691A28B4A366007C48E8 /* CodeTextView.swift */; };
 		F978693B28B99FF7007C48E8 /* RectangleCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = F978693A28B99FF7007C48E8 /* RectangleCard.swift */; };
 		F980D07B288B6E2600B9970E /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F980D07A288B6E2600B9970E /* ContentView.swift */; };
@@ -30,6 +31,7 @@
 		F9464FCD28A9FFCE007CFD0E /* ContentDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentDetailView.swift; sourceTree = "<group>"; };
 		F9464FD028AA1322007CFD0E /* AVKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVKit.framework; path = System/Library/Frameworks/AVKit.framework; sourceTree = SDKROOT; };
 		F9464FD228AA3BF1007CFD0E /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		F95B47EB28D2D56B00290B27 /* TestResultView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestResultView.swift; sourceTree = "<group>"; };
 		F978691A28B4A366007C48E8 /* CodeTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodeTextView.swift; sourceTree = "<group>"; };
 		F978693A28B99FF7007C48E8 /* RectangleCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RectangleCard.swift; sourceTree = "<group>"; };
 		F980D07A288B6E2600B9970E /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -118,6 +120,7 @@
 				F9951FA628BD98B700E46CA6 /* TestView.swift */,
 				F978691A28B4A366007C48E8 /* CodeTextView.swift */,
 				F978693A28B99FF7007C48E8 /* RectangleCard.swift */,
+				F95B47EB28D2D56B00290B27 /* TestResultView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -228,6 +231,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F9951FA728BD98B700E46CA6 /* TestView.swift in Sources */,
+				F95B47EC28D2D56B00290B27 /* TestResultView.swift in Sources */,
 				F989ACA328177CBD002F6782 /* HomeView.swift in Sources */,
 				F9D097F5283B56C70090CEC0 /* HomeViewRow.swift in Sources */,
 				F980D07B288B6E2600B9970E /* ContentView.swift in Sources */,
